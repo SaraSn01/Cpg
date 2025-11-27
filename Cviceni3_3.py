@@ -1,6 +1,6 @@
 
-from cviceni3 import levensteinova_vzdalenost
-from cviceni3_3 import jaccardova_vzdalenost_mnozin
+from Cviceni3_1 import levensteinova_vzdalenost
+from Cviceni3_2 import jaccardova_vzdalenost_mnozin
 
 
 def deduplikace_dotazu(dotazy):
@@ -10,7 +10,6 @@ def deduplikace_dotazu(dotazy):
     """
     i = 0
     while i < len(dotazy):
-        dotaz = dotazy[i]
         j = i + 1
         while j < len(dotazy):
             lev = levensteinova_vzdalenost(dotazy[i]["dotaz"], dotazy[j]["dotaz"])
@@ -19,6 +18,7 @@ def deduplikace_dotazu(dotazy):
                 dotazy.pop(j)
             else:
                 j += 1 
+        i += 1
     return dotazy
 
     
@@ -43,5 +43,4 @@ if __name__ == "__main__":
         "dotaz": "google",
         "serp": ["https://www.google.com", "https://maps.google.com", "https://www.gmail.com"]
     }
-    for dotaz in deduplikace_dotazu([dotaz1, dotaz2, dotaz3, dotaz4]):
-        print(dotaz["dotaz"])
+    print(eduplikace_dotazu([dotaz1, dotaz2, dotaz3, dotaz4]))
