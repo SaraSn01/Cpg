@@ -8,19 +8,19 @@ def filtruj_cisla(typ, cisla):
     if typ == "kladna":
         for x in cisla:
             if x > 0:
-                return vysledek.append(x)
+                return x 
     elif typ == "zaporna":
         for x in cisla:
              if x <= 0:
-                 return vysledek.append(cisla)
+                 return x
     elif typ == "suda":
         for x in cisla:
              if x % 2 == 0:
-                return vysledek.append(cisla)
+                return x
     elif typ == "licha":
         for x in cisla:
              if x % 2 == 1:
-                return vysledek.append(cisla)
+                return x
     else:
         return []
 
